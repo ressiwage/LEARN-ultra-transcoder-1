@@ -19,7 +19,7 @@ def transcode():
             mimestart = mimetypes.guess_type(fn)[0]
             if mimestart != None:
                 mimestart = mimestart.split('/')[0]
-                if mimestart == 'video':        
+                if mimestart == 'video' and "TRANS" not in name:        
                     print(f"""ffmpeg -i "{fn}" -c:v av1_nvenc -crf 55 "{make_name(fn)}" """)
                     subprocess.run(
                         f"""ffmpeg -i "{fn}" -c:v av1_nvenc -crf 55 "{make_name(fn)}" """
