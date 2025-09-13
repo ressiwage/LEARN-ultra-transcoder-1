@@ -51,4 +51,3 @@ def delete_old_videos():
 
 transcode()
 get_transcoded_names()
-delete_old_videos()
